@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Button } from "react-bootstrap";
 import { FaPlus } from "react-icons/fa";
 import { ITodoObj } from "./App";
-import { AddTodo } from "./App";
-const TodoForm = ({ addTodo }: AddTodo) => {
+const TodoForm = () => {
   const [todo, setTodo] = useState<ITodoObj>({
     id: "",
     task: "",
@@ -22,8 +21,6 @@ const TodoForm = ({ addTodo }: AddTodo) => {
       const newtodo: ITodoObj = {
         ...todo,
       };
-      addTodo({ ...todo, id: uuidv4() });
-      //reset input
       setTodo({ ...todo, task: "" });
     }
   }
